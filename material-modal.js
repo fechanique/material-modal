@@ -13,7 +13,7 @@ function materialConfirm( title, text, callback ){
 function closeMaterialAlert(e, result){
 	e.stopPropagation();
 	document.getElementById('materialModal').className = 'hide';
-	materialCallback(result);
+	if(typeof materialCallback == 'function') materialCallback(result);
 }
 window.onload = function() {
 	var materialModal = document.createElement('div');
