@@ -16,7 +16,6 @@ function closeMaterialAlert(e, result){
 	materialCallback(result);
 }
 window.onload = function() {
-	console.log('miau')
 	var materialModal = document.createElement('div');
 		materialModal.id = 'materialModal';
 		materialModal.className = 'hide';
