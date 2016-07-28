@@ -4,7 +4,7 @@ Vanilla JavaScript Google's MaterialDesign-like modal window
 ##Installation
 ```html
 <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/fechanique/material-modal/master/material-modal.css">
 <script src="https://cdn.rawgit.com/fechanique/material-modal/master/material-modal.js"></script>
 ```
 ##Functions
