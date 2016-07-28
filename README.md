@@ -14,8 +14,9 @@ Vanilla JavaScript Google's MaterialDesign-like modal window
 //materialAlert(title, text, callback)
 
 materialAlert('Title', 'Content', function(result){
-	if(result==true) console.log('OK button pressed')
-})
+	if(result==true) console.log('OK button pressed');
+	else console.log('No button was pressed');
+});
 ```
 
 ###Open confirm
@@ -24,8 +25,9 @@ materialAlert('Title', 'Content', function(result){
 //materialConfirm(title, text, callback)
 
 materialConfirm('Title', 'Content', function(result){
-	if(result==true) console.log('OK button pressed')
-})
+	if(result==true) console.log('OK button pressed');
+	else console.log('CANCEL button was pressed or No button was pressed');
+});
 ```
 
 ##Example
