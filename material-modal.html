@@ -1,0 +1,116 @@
+<html>
+	<head>
+		<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+		<style>
+			#materialModal{
+				font-family:roboto;
+				color:#222;
+				position:absolute;
+				top:0px;
+				left:0px;
+				width:100%;
+				height:100%;
+				background:rgba(0,0,0,0.5);
+				display:table;
+				z-index:1000;
+			}
+			#materialModalCentered{
+				display:table-cell;
+				vertical-align:middle;
+			}
+			#materialModalContent{
+				padding:10px;
+				position:relative;
+				background:white;
+				width:400px;
+				min-height:200px;
+				margin:auto;
+				box-shadow:0px 10px 20px 0px rgba(0,0,0,0.4);
+				box-sizing:border-box;
+			}
+			#materialModalTitle{
+				margin:10px;
+				font-weight:bold;
+				font-size:1.2em;
+			}
+			#materialModalText{
+				margin:10px;
+				margin-bottom:40px;
+			}
+			#materialModalButtons{
+				width:calc(100% - 20px);
+				position:absolute;
+				bottom:0px;
+			}
+			.materialModalButton{
+				margin:10px;
+				font-weight:bold;
+				cursor:pointer;
+				text-align:center;
+				float:right;
+				text-transform:uppercase;
+				padding:10px;
+			}
+			#materialModal.hide{
+				opacity:0;
+				transition:opacity 0.2s ease-out;
+				pointer-events:none;
+			}
+			#materialModal.hide #materialModalCentered{
+				transform:scale(0);
+				transition:transform 0.2s ease-out;
+			}
+			#materialModal.show{
+				opacity:1;
+				transition:opacity 0.2s ease-in;
+			}
+			#materialModal.show #materialModalCentered{
+				transform:scale(1);
+				transition:transform 0.2s ease-in;
+			}
+		</style>
+		<script>
+			materialCallback = null;
+			function materialAlert( title, text, callback ){
+				document.getElementById('materialModalTitle').innerHTML = title;
+				document.getElementById('materialModalText').innerHTML = text;
+				document.getElementById('materialModalButtonCANCEL').style.display = 'none';
+				document.getElementById('materialModal').className = 'show';
+				materialCallback = callback;
+			}
+			function materialConfirm( title, text, callback ){
+				materialAlert( title, text, callback );
+				document.getElementById('materialModalButtonCANCEL').style.display = 'block';
+			}
+			function closeMaterialAlert(e, result){
+				e.stopPropagation();
+				document.getElementById('materialModal').className = 'hide';
+				materialCallback(result);
+			}
+		</script>
+	</head>
+	<body>
+		<button onclick="materialConfirm('Title','Content',function(result){console.log(result)})">Show confirm</button>
+		<button onclick="materialAlert('Title','Content',function(result){console.log(result)})">Show alert</button>
+		<div id="materialModal" onclick="closeMaterialAlert(event, false)" class="hide">
+			<div id="materialModalCentered">
+				<div id="materialModalContent" onclick="event.stopPropagation()">
+					<div id="materialModalTitle">
+						This is the title
+					</div>
+					<div id="materialModalText">
+						This is the content<br/>
+					</div>
+					<div id="materialModalButtons">
+					<div id="materialModalButtonOK" class="materialModalButton" onclick="closeMaterialAlert(event, true)">
+						Ok
+					</div>
+					<div id="materialModalButtonCANCEL" class="materialModalButton" onclick="closeMaterialAlert(event, false)">
+						Cancel
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
