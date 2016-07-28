@@ -26,7 +26,7 @@ materialAlert('Title', 'Content', function(result){
 
 materialConfirm('Title', 'Content', function(result){
 	if(result==true) console.log('OK button pressed');
-	else console.log('CANCEL button was pressed or No button was pressed');
+	else console.log('CANCEL button was pressed or no button was pressed');
 });
 ```
 
