@@ -16,6 +16,7 @@ function closeMaterialAlert(e, result){
 	if(typeof materialCallback == 'function') materialCallback(result);
 }
 window.onload = function() {
+	console.log('material-modal.js v1.1')
 	var materialModal = document.createElement('div');
 		materialModal.id = 'materialModal';
 		materialModal.className = 'hide';
