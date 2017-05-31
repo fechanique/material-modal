@@ -13,12 +13,13 @@
 #materialModalCentered{
 	display:table-cell;
 	vertical-align:middle;
+	padding: 20px;
 }
 #materialModalContent{
 	padding:10px;
 	position:relative;
 	background:white;
-	width:400px;
+	max-width:400px;
 	min-height:200px;
 	margin:auto;
 	box-shadow:0px 10px 20px 0px rgba(0,0,0,0.4);
