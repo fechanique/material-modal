@@ -15,7 +15,7 @@ function closeMaterialAlert(e, result){
 	document.getElementById('materialModal').className = 'hide';
 	if(typeof materialCallback == 'function') materialCallback(result);
 }
-window.onload = function() {
+window.addEventListener('load', function(){
 	console.log('material-modal.js v1.1')
 	var materialModal = document.createElement('div');
 		materialModal.id = 'materialModal';
@@ -50,4 +50,4 @@ window.onload = function() {
 	materialModalCentered.appendChild(materialModalContent)
 	materialModal.appendChild(materialModalCentered);
 	document.body.appendChild(materialModal)
-}
+})
