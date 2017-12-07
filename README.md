@@ -1,14 +1,14 @@
 # material-modal
 Vanilla JavaScript Google's MaterialDesign-like modal window
 
-##Installation
+## Installation
 ```html
 <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/fechanique/material-modal/master/material-modal.css">
 <script src="https://cdn.rawgit.com/fechanique/material-modal/master/material-modal.js"></script>
 ```
-##Functions
-###Open alert
+## Functions
+### Open alert
 ```javscript
 //Opens a modal window with OK button
 //materialAlert(title, text, callback)
@@ -19,7 +19,7 @@ materialAlert('Title', 'Content', function(result){
 });
 ```
 
-###Open confirm
+### Open confirm
 ```javscript
 //Opens a modal window with OK and CANCEL button
 //materialConfirm(title, text, callback)
@@ -30,7 +30,7 @@ materialConfirm('Title', 'Content', function(result){
 });
 ```
 
-##Example
+## Example
 ```html
 <html>
 	<head>
